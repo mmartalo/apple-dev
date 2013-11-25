@@ -381,7 +381,7 @@ module Apple
 
 		def [](option)
 			text = @text
-			text.force_encoding Encoding::default_external  # avoid regex encoding mismatches
+			text.force_encoding Encoding::UTF_8  # avoid regex encoding mismatches
 		  	if (option)
 		    	r = Plist::parse_xml(text)
 	    		text = r[option]
